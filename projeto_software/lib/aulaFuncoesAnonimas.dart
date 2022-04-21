@@ -10,6 +10,7 @@ Contexto
 import 'dart:io';
 
 String verificarAprovacaoCompleto(int opcao, double nota1, double nota2) {
+  print("Olá Mundo: ");
   if (opcao == 1) {
     // aprovação pela média
     double media = (nota1 + nota2) / 2;

@@ -1,4 +1,3 @@
-import 'dart:io';
 /* 
  Sistema: Gestão Acadêmica
  DATA: 20/04/2022
@@ -17,26 +16,41 @@ import 'dart:io';
      - se o aluno foi aprovado ou não
 
 */
+import 'dart:io';
 
-void print() {}
+String show() {
+  String resultado = verificarAprovacaoDisciplina(1, 5.5, 6.0, 8.9, 7.0);
+  print(resultado);
+}
 
-void verificarAprovacaoDisciplia(
-    int opcao, double nota1, double nota2, double nota3) {
+String verificarAprovacaoDisciplina(int opcao, double nota1, double nota2,
+    double nota3, double mediaDisciplina) {
   if (opcao == 1) {
-  } else if (opcao == 2) {}
+    return calcularMedia(nota1, nota2, nota3, mediaDisciplina);
+  } else {
+    return dadosAluno();
+  }
 }
 
-String nomeDisciplina() {
-  print("Nome da Disciplina: ");
-  String nomeDisciplina = stdin.readLineSync()!;
-
-  return nomeDisciplina;
+String calcularMedia(
+    double nota1, double nota2, double nota3, double mediaDisciplia) {
+  double media = (nota1 + nota2 + nota3) / 3;
+  if (media >= mediaDisciplia) {
+    return 'APROVADO';
+  } else {
+    return 'REPROVADO';
+  }
 }
 
-double mediaDisciplina() {
-  print('Média para aprovação: ');
-  String mediaAprovacao = stdin.readLineSync()!;
-  double converterMediaAprovacao = double.parse(mediaAprovacao);
-
-  return converterMediaAprovacao;
+void dadosAluno() {
+  print('''
+          ================= DADOS ==================
+          Aluno: $nomeAluno,
+          Disciplina: $nomeDisciplina,
+          Média para aprovação: $mediaDisciplina,
+          Notas: $notasAluno,
+          Média notas: $mediaNotas,
+          Situação: $situacao, 
+          ==========================================
+''');
 }
