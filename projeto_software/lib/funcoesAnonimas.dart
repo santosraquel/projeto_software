@@ -1,8 +1,8 @@
 /* 
- Sistema: Gestão Acadêmica
  DATA: 20/04/2022
  TEMA DA AULA: Funções Anônimas
 
+ Sistema: Gestão Acadêmica
   Informar:
     - Nome do aluno
     - Disciplina
