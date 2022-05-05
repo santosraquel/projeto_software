@@ -39,7 +39,7 @@ PARÂMETROS NOMEADOS:
 
 */
 
-void main() {
+void show() {
   // chamada função com parâmetros opcionais (valor padrão)
   informacoesCurso1("Raquel");
 
