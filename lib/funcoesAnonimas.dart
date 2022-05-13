@@ -42,91 +42,49 @@
 */
 import 'dart:io';
 
-void show() {
-  dadosAluno();
+void show1() {
+  calcular1(1);
+  calcular1(2);
 }
 
-String verificarAprovacaoDisciplina(int opcao, double nota1, double nota2,
-    double nota3, int peso1, int peso2, int peso3, double mediaDisciplina) {
+void show2() {
+  calcular2(() {
+    stdout.write("Preço do Produto: ");
+    double precoProduto = double.parse(stdin.readLineSync()!);
+    precoProduto = precoProduto + (precoProduto * 30 / 100);
+    return precoProduto;
+  });
+}
+
+void calcular1(int opcao) {
   if (opcao == 1) {
-    return calcularMediaAritmetica(nota1, nota2, nota3, mediaDisciplina);
+    var precoTotal = calcularPrecoTotal();
+    print("Preço Total: $precoTotal");
   }
   if (opcao == 2) {
-    return calcularMediaPonderada(
-        nota1, nota2, nota3, peso1, peso2, peso3, mediaDisciplina);
-  } else {
-    return 'Opção inválida';
+    var valorDesconto = calcularDesconto();
+    print("Desconto de 10%: $valorDesconto");
   }
 }
 
-String calcularMediaAritmetica(
-    double nota1, double nota2, double nota3, double mediaDisciplia) {
-  double media = (nota1 + nota2 + nota3) / 3;
-  if (media >= mediaDisciplia) {
-    return '$media (APROVADO)';
-  } else {
-    return '$media (REPROVADO)';
-  }
+void calcular2(Function acrescimo) {
+  var res = acrescimo();
+  print("Acréscimo de 30%: RS $res");
 }
 
-String calcularMediaPonderada(double nota1, double nota2, double nota3,
-    int peso1, int peso2, int peso3, double mediaDisciplia) {
-  double media = ((nota1 * peso1) + (nota2 * peso2) + (nota3 * peso3)) /
-      (peso1 + peso2 + peso3);
-  if (media >= mediaDisciplia) {
-    return '$media (APROVADO)';
-  } else {
-    return '$media (REPROVADO)';
-  }
+double calcularPrecoTotal() {
+  stdout.write("Preço do Produto: ");
+  double precoProduto = double.parse(stdin.readLineSync()!);
+  stdout.write("Quantidade de produto: ");
+  int quantidade = int.parse(stdin.readLineSync()!);
+  double valorTotal = precoProduto * quantidade;
+  return valorTotal;
 }
 
-void dadosAluno() {
-  print('Nome do Aluno:');
-  String nomeAluno = stdin.readLineSync()!;
-
-  print('Nome da disciplina: ');
-  String nomeDisciplina = stdin.readLineSync()!;
-
-  print('Nota 1: ');
-  String nt1 = stdin.readLineSync()!;
-  double nota1 = double.parse(nt1);
-
-  print('Nota 2: ');
-  String nt2 = stdin.readLineSync()!;
-  double nota2 = double.parse(nt2);
-
-  print('Nota 3: ');
-  String nt3 = stdin.readLineSync()!;
-  double nota3 = double.parse(nt3);
-
-  print('Peso 1: ');
-  String ps1 = stdin.readLineSync()!;
-  int peso1 = int.parse(ps1);
-
-  print('Peso 2: ');
-  String ps2 = stdin.readLineSync()!;
-  int peso2 = int.parse(ps2);
-
-  print('Nota 3: ');
-  String ps3 = stdin.readLineSync()!;
-  int peso3 = int.parse(ps3);
-
-  print('Média da disciplina: ');
-  String media = stdin.readLineSync()!;
-  double mediaDisciplina = double.parse(media);
-
-  String mediaArtimetica = verificarAprovacaoDisciplina(
-      1, nota1, nota2, nota3, 0, 0, 0, mediaDisciplina);
-
-  String mediaPonderada = verificarAprovacaoDisciplina(
-      2, nota1, nota2, nota3, peso1, peso2, peso3, mediaDisciplina);
-  print('''
-        ======================= DADOS DO ALUNO ============================
-              Aluno(a): $nomeAluno
-              Disciplina: $nomeDisciplina
-              Média da Disciplina: $mediaDisciplina
-              Média Aritmética: $mediaArtimetica
-              Média Ponderada: $mediaPonderada
-        ===================================================================
-''');
+// desconto de 10% no valor do produto
+double calcularDesconto() {
+  stdout.write("Preço do Produto: ");
+  double precoProduto = double.parse(stdin.readLineSync()!);
+  precoProduto = precoProduto - (precoProduto * (10 / 100));
+  return precoProduto;
 }
