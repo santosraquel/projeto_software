@@ -4,14 +4,20 @@ TEMA DA AULA: Funções
  
 Sistema: Sistema para gestão de vendas de produtos de informática
  Criar:
- - uma função que peça o nome do aluno e o retorne
- - uma função que peça o nome do curso e o retorne
- - uma função que peça o preço da mensalidade do curso e o retorne
- - uma função que peça o tempo de duração do curso e o retorne
- - uma função que calcule o preço total do curso e o retorne
- - uma função que calcule o desconto de 50% da mensalidade do curso e o retorne
- - uma função que calcule o desconto de 75% no preço total do curso e o retorne
- - uma função que aprensente todos os dadoas na tela
+ - uma função que peça o nome do produto e o retorne.
+ - uma função que peça o preço do produto e o retorne.
+ - uma função que peça o status do produto e o retorne.
+ - uma função que insira produtos em uma lista.
+ - uma função que peça liste os produtos inseridos.
+ - uma função que receba por parâmetro o preço de um produto, calcule o desconto 
+    de 10% e o retorne o resultado.
+ - uma função que receba por parâmetro o preço de um produto, informe a quantidade 
+    desse item, calcule o valor total e o retorne.
+ - uma função que receba por parâmetro o preço de um produto, informe a quantidade 
+    desse item, calcule o valor total, informe em quantas vezes deseja parcelar o valor
+    e imprima o preço da parcela.
+ - uma função que receba por parâmetro o preço de um produto, calcule o preço a prazo
+    com acréscimo de 30% do valor e o imprima na tela.
  
  RELATÓRIO DA AULA:
  De forma simples podemos dizer que uma função nada mais é do que

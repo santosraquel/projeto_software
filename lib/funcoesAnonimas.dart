@@ -2,19 +2,15 @@
  DATA: 20/04/2022
  TEMA DA AULA: Funções Anônimas
 
- Sistema: Gestão Acadêmica
-  Informar:
-    - Nome do aluno
-    - Disciplina
-    - As 3 notas da disciplinas
-    - Os 3 pesos
-    - Média para aprovação na diciplina
-    Retornar "Relatório" contendo:
-     - nome do aluno
-     - nome da disciplinas
-     - a média para aprovação na disciplina
-     - a média artimética das notas e se o aluno foi ou não aprovado 
-     - a média ponderada e se o aluno foi ou não aprovado 
+Sistema: Sistema para gestão de vendas de produtos de informática
+  - criar uma função que receba por parâmetro uma opcao.
+      Se a opção for 1: 
+        Deverá chamar uma função que calcule e retorne o preço total de um produto.
+      Se a opção for 2:
+        Deverá chamar uma função que calcule e retorne o preço do produto com desconto de 10%.
+    - criar uma função que receba como parâmetro uma função.
+        A função passada por parâmetro deve ser uma função anônima que deverá 
+        calcular o preço do produto com acréscimo de 30%.
 
   RELATÓRIO DA AULA:
   Contexto 
