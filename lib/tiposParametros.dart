@@ -31,37 +31,37 @@ PARÂMETROS NOMEADOS:
 
 import 'dart:io';
 
+void show() {
+  // precoOpcional("Mouse", 'false');
+  // statusProdutoOpcional("Teclado", 150.00);
+  // nomeadosObrigatorios("Pendrive", preco: 60.00, opcao: 2);
+  // nomeadoOpcional("Fone JBL", 180.00);
+  // nomeadoObrigatorioOpcional("Caixa de Som", preco: 200.00);
+  nomeadoPosicional(produto: "Mouse", preco: 20.00, opcao: 2);
+}
+
 void calcularPrecoTotal(double preco) {
   stdout.write("Quantidade de produto: ");
   int quantidade = int.parse(stdin.readLineSync()!);
   double valorTotal = preco * quantidade;
-  print("Preço total: $valorTotal");
+  print("Preço total: RS$valorTotal");
 }
 
 void calcularDesconto(double preco) {
   double valorTotal = preco - (preco * (10 / 100));
-  print("Desconto de 10%: $valorTotal");
-}
-
-void show() {
-  precoOpcional("Mouse", 'false');
-  statusProdutoOpcional("Teclado", 150.00);
-  nomeadosObrigatorios("Pendrive", preco: 60.00, opcao: 1);
-  nomeadoOpcional("Fone JBL", 180.00, status: "true");
-  nomeadoObrigatorioOpcional("Caixa de Som", preco: 200.00, status: 'true');
-  nomeadoPosicional(produto: "Mouse", preco: 20.00, opcao: 1);
+  print("Desconto de 10%: RS$valorTotal");
 }
 
 // Duas funções com parâmetros opcionais (valor padrão)
 void precoOpcional(String produto, String status, [double preco = 0.0]) {
   print("Produto: $produto");
-  print("Preço: $preco");
+  print("Preço: RS$preco");
   print("Status: $status");
 }
 
 void statusProdutoOpcional(String produto, double preco, [status = true]) {
   print("Produto: $produto");
-  print("Preço: $preco");
+  print("Preço: RS$preco");
   print("Status: $status");
 }
 
@@ -69,7 +69,7 @@ void statusProdutoOpcional(String produto, double preco, [status = true]) {
 void nomeadosObrigatorios(String produto,
     {required double preco, required int opcao}) {
   print("Produto: $produto");
-  print("Preço: $preco");
+  print("Preço: RS$preco");
   if (opcao == 1) {
     calcularPrecoTotal(preco);
   }
@@ -79,17 +79,17 @@ void nomeadosObrigatorios(String produto,
 }
 
 // Uma função com parâmetros nomeados opcionais;
-void nomeadoOpcional(String produto, double preco, {String status}) {
+void nomeadoOpcional(String produto, double preco, {status = false}) {
   print("Produto: $produto");
-  print("Preço: $preco");
+  print("Preço: RS$preco");
   print("Status: $status");
 }
 
 // Uma função com parâmetros nomeados obrigatórios e opcionais;
 void nomeadoObrigatorioOpcional(String produto,
-    {required double preco, String status}) {
+    {required double preco, status = false}) {
   print("Produto: $produto");
-  print("Preço: $preco");
+  print("Preço: RS$preco");
   print("Status: $status");
 }
 
@@ -97,7 +97,7 @@ void nomeadoObrigatorioOpcional(String produto,
 void nomeadoPosicional(
     {required String produto, required double preco, required int opcao}) {
   print("Produto: $produto");
-  print("Preço: $preco");
+  print("Preço: RS$preco");
   if (opcao == 1) {
     calcularPrecoTotal(preco);
   }
